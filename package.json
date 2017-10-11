@@ -1,7 +1,7 @@
 {
   "name": "edition-node-webpack",
   "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
