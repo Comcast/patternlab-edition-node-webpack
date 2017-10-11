@@ -1,0 +1,44 @@
+{
+  "name": "edition-node-webpack",
+  "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
+  "version": "1.0.0",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "event-hooks-webpack-plugin": "^1.0.0",
+    "glob": "^7.1.2",
+    "patternlab-node": "^2.11.0",
+    "styleguidekit-assets-default": "^3.5.0",
+    "styleguidekit-mustache-default": "^3.0.0",
+    "webpack": "^3.5.6",
+    "webpack-config-utils": "^2.3.0"
+  },
+  "repository": "git@github.com:Comcast/patternlab-edition-node-webpack.git",
+  "bugs": "https://github.com/Comcast/patternlab-edition-node-webpack/issues",
+  "author": "Matt Bulfair <Matt_Bulfair@comcast.com>",
+  "contributors": [
+    "Rodrigo Gualberto <itzdrigz@gmail.com>"
+  ],
+  "scripts": {
+    "start": "yarn patternlab:serve",
+    "webpack:version": "webpack --v",
+    "patternlab:build": "webpack --env.prod -p",
+    "patternlab:serve": "webpack-dev-server --env.dev --hot",
+    "patternlab:version": "node patternlab.js version",
+    "patternlab:help": "node patternlab.js help",
+    "patternlab:patternsonly": "node patternlab.js patternsonly",
+    "patternlab:liststarterkits": "node patternlab.js liststarterkits",
+    "patternlab:loadstarterkit": "node patternlab.js loadstarterkit",
+    "patternlab:installplugin": "node patternlab.js installplugin",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=5.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.7.1"
+  }
+}
