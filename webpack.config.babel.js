@@ -20,6 +20,7 @@ module.exports = env => {
     },
     entry: { 
       // Gathers any Source JS files and creates a bundle
+      //NOTE: This name can be changed, if so, make sure to update _meta/01-foot.mustache
       "js/pl-source":
         glob.sync(resolve(plConfig.paths.source.js + '**/*.js')).map(function (filePath) {
           return filePath;
@@ -71,12 +72,6 @@ module.exports = env => {
           to: resolve(plConfig.paths.public.fonts)
         },
         {
-          // Copy all js from source to public
-          context: resolve(plConfig.paths.source.js),
-          from: './*.js',
-          to: resolve(plConfig.paths.public.js)
-        },
-        {
           // Copy all css from source to public
           context: resolve(plConfig.paths.source.css),
           from: './*.css',
@@ -93,7 +88,7 @@ module.exports = env => {
           // Styleguide Copy and flatten css
           context: resolve(plConfig.paths.source.styleguide),
           from: './**/*.css',
-          to: resolve(plConfig.paths.public.styleguide + 'css'),
+          to: resolve(plConfig.paths.public.styleguide, 'css'),
           flatten: true
         }
       ]),
