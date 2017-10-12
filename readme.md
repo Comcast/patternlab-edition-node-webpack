@@ -104,3 +104,7 @@ To install a specific StarterKit from GitHub type:
 * [webpack](https://github.com/webpack/webpack/blob/master/LICENSE) - MIT
 * [webpack-config-utils](https://github.com/kentcdodds/webpack-config-utils/blob/master/LICENSE) - MIT
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server/blob/master/LICENSE) - MIT
+
+### Special Thanks and Contributions
+
+* A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work and support in the start of this project. 
