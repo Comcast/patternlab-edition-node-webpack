@@ -107,4 +107,6 @@ To install a specific StarterKit from GitHub type:
 
 ### Special Thanks and Contributions
 
-* A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work and support in the start of this project. 
+ Contributor | Special Thanks  
+- | -
+ ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75)[@rgualberto](https://github.com/rgualberto) | "A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work, dedication, and support from the start of project."
