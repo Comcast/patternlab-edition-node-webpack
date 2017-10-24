@@ -1,28 +1,31 @@
 // webpack.config.js
 const webpack = require('webpack');
 const {resolve} = require('path');
-const glob = require('glob');
+const globby = require('globby');
 const {getIfUtils, removeEmpty} = require('webpack-config-utils');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const EventHooksPlugin = require('event-hooks-webpack-plugin');
 const plConfig = require('./patternlab-config.json');
 const patternlab = require('patternlab-node')(plConfig);
 const patternEngines = require('patternlab-node/core/lib/pattern_engines');
-
+const merge = require('webpack-merge');
+const customization = require(`${plConfig.paths.source.app}/webpack.app.js`);
 
 module.exports = env => {
   const {ifProd, ifDev} = getIfUtils(env);
-  const config = ({
+  const config = merge.smart(customization(env), {
     devtool: ifDev('source-map'),
     context: resolve(__dirname, 'source'),
     node: {
       fs: "empty"
     },
     entry: { 
-      // Gathers any Source JS files and creates a bundle
-      //NOTE: This name can be changed, if so, make sure to update _meta/01-foot.mustache
-      "js/pl-source":
-        glob.sync(resolve(plConfig.paths.source.js + '**/*.js')).map(function (filePath) {
+      /**
+       * Gathers any Source JS files and creates a bundle
+       * Note: To change this, please modify _app/webpack.app.js and use the same key.
+       */
+      "js/pl-source": 
+        globby.sync([resolve(plConfig.paths.source.js + '**/*.js')]).map(function (filePath) {
           return filePath;
         })
     },
@@ -121,7 +124,7 @@ module.exports = env => {
           const allWatchFiles = watchFiles.concat(templateFilePaths);
 
           allWatchFiles.forEach(function(globPath) {
-            const patternFiles = glob.sync(globPath).map(function (filePath) {
+            const patternFiles = globby.sync(globPath).map(function (filePath) {
               return resolve(filePath);
             });
 

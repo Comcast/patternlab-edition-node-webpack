@@ -9,7 +9,7 @@ The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-la
 ## Installation and Starting
 
 1. `yarn install` or `npm install`
-2. `yarn start`
+2. `yarn start` or `npm run start`
 
 
 ## Packaged Components
@@ -97,10 +97,17 @@ To install a specific StarterKit from GitHub type:
 * [babel-preset-es2015](https://github.com/babel/babel/blob/master/LICENSE) - MIT
 * [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin/blob/master/LICENSE) - MIT
 * [event-hooks-webpack-plugin](https://github.com/cascornelissen/event-hooks-webpack-plugin/blob/master/LICENSE.md) - MIT
-* [glob](https://github.com/isaacs/node-glob/blob/master/LICENSE) - ISC
+* [globby](https://github.com/sindresorhus/globby/blob/master/license) - MIT
 * [patternlab-node](https://github.com/pattern-lab/patternlab-node/blob/master/LICENSE) - MIT
 * [styleguidekit-assets-default](https://github.com/pattern-lab/styleguidekit-assets-default/blob/master/LICENSE) - MIT
 * [styleguidekit-mustache-default](https://github.com/pattern-lab/styleguidekit-mustache-default/blob/master/LICENSE) - MIT
 * [webpack](https://github.com/webpack/webpack/blob/master/LICENSE) - MIT
 * [webpack-config-utils](https://github.com/kentcdodds/webpack-config-utils/blob/master/LICENSE) - MIT
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server/blob/master/LICENSE) - MIT
+* [webpack-merge](https://github.com/survivejs/webpack-merge/blob/master/LICENSE) - MIT
+
+### Special Thanks and Contributions
+
+Contributor | Special Thanks  
+----------- | --------------
+ ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75)[@rgualberto](https://github.com/rgualberto) | "A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work, dedication, and support from the start of project."
