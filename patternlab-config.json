@@ -2,6 +2,7 @@
   "paths": {
     "source": {
       "root": "./source/",
+      "app": "./source/_app",
       "patterns": "./source/_patterns/",
       "data": "./source/_data/",
       "meta": "./source/_meta/",
@@ -66,11 +67,12 @@
   "patternExportPatternPartials": [],
   "patternExportDirectory": "./pattern_exports/",
   "cacheBust": true,
-  "starterkitSubDir": "dist",
+  "starterkitPostInstallClean": false,
   "outputFileSuffixes": {
     "rendered": ".rendered",
     "rawTemplate": "",
     "markupOnly": ".markup-only"
   },
-  "cleanOutputHtml": true
+  "cleanOutputHtml": true,
+  "exportToGraphViz": false
 }
