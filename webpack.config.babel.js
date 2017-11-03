@@ -13,19 +13,18 @@ const customization = require(`${plConfig.paths.source.app}/webpack.app.js`);
 
 module.exports = env => {
   const {ifProd, ifDev} = getIfUtils(env);
-  const config = merge.smart(customization(env), {
+  
+  const config = merge.smartStrategy(plConfig.webpackMerge)({
     devtool: ifDev('source-map'),
     context: resolve(__dirname, 'source'),
     node: {
       fs: "empty"
     },
     entry: { 
-      /**
-       * Gathers any Source JS files and creates a bundle
-       * Note: To change this, please modify _app/webpack.app.js and use the same key.
-       */
+      // Gathers any Source JS files and creates a bundle
+      //NOTE: This name can be changed, if so, make sure to update _meta/01-foot.mustache
       "js/pl-source": 
-        globby.sync([resolve(plConfig.paths.source.js + '**/*.js')]).map(function (filePath) {
+          globby.sync([resolve(plConfig.paths.source.js + '**/*.js')]).map(function (filePath) {
           return filePath;
         })
     },
@@ -140,7 +139,7 @@ module.exports = env => {
       contentBase: resolve(__dirname, 'public'),
       port: plConfig.server.port,
       open:true,
-      watchContentBase: true
+      watchContentBase: false
     },
     module: {
       rules: [
@@ -158,7 +157,7 @@ module.exports = env => {
         }
       ]
     }
-  })
+  }, customization(env))
 
   return config
 }

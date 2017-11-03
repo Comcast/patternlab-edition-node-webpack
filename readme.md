@@ -38,7 +38,7 @@ There's two options for installing this version:
 
 **Please note:** Pattern Lab Node uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade the webpack edition or to install plug-ins you'll need to be familiar with npm.
 
-### Use npm
+### Use npm (yarn)
 
 `npm` is a dependency management and package system which can pull in all of the webpack editions's dependencies for you. To accomplish this:
 
@@ -90,6 +90,29 @@ To install a specific StarterKit from GitHub type:
     yarn add [starterkit-vendor/starterkit-name]
 
     yarn patternlab:loadstarterkit --kit=[starterkit-name]
+
+### Pattern Lab - Configuration
+
+Unlike the other editions, there were a few options added just for this edition that allow for easier upgrading, and better flexibility.
+
+#### Setting Dev Server Settings
+You can set the url and port number in the configuration for 
+
+    "server": {
+        "url": "http://localhost",
+        "port": 3000
+    },
+
+#### Setting the Webpack Merge Options
+In this edition, it's important to make the configuration for webpack something very easy to update, and very easy to modify. The current setting for webpack merge are described [here.](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/source/_app/readme.md)
+
+You can change how it merges by changing this object in `patternlab-config.json`:
+    
+    "webpackMerge": {
+        "entry":"replace"
+    },
+
+By default merge does a `append` if that option works for you only set which webpack configuration you want to change. The merge setting is: `smartStrategy` which is documented over on this [page.](https://www.npmjs.com/package/webpack-merge#mergesmartstrategy-key-prependappendreplaceconfiguration--configuration)
 
 ### Licenses
 * [babel-core](https://github.com/babel/babel/blob/master/LICENSE) - MIT

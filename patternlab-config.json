@@ -30,11 +30,14 @@
     "url": "http://localhost",
     "port": 3000
   },
+  "webpackMerge": {
+    "entry":"replace"
+  },
   "styleGuideExcludes": [
   ],
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
-  "cleanPublic" : false,
+  "cleanPublic" : true,
   "patternExtension": "mustache",
   "ignored-extensions" : ["scss", "DS_Store", "less"],
   "ignored-directories" : ["scss"],
