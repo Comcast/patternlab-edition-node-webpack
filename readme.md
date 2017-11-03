@@ -53,6 +53,17 @@ There's two options for installing this version:
 
 Running `yarn install` or `npm install` from a directory containing a `package.json` file will download all dependencies defined within. The `yarn.lock` file is automatically managaged everytime you add/remove/upgrade a dependency. Currently `yarn` is faster than `npm` so it's the preferred method of running scripts. 
 
+#### Install the Webpack Edition of Pattern Lab Node as a Dependency
+
+Most people want to run Pattern Lab Node standalone and not as a dependency. If you wish to install as a dependency you can do the following:
+
+Use npm's/yarn `install`/`add` command with an argument to install the Webpack Edition into a location of your choosing. In Terminal type:
+
+    cd install/location/
+    npm install edition-node-webpack
+
+This will install the Webpack Edition into a directory called `node_modules` in `install/location/`.
+
 ## Getting Started
 
 The Pattern Lab Node - Webpack Edition ships with a [base experience](https://github.com/pattern-lab/starterkit-mustache-base) which serves as clean place to start from scratch with Pattern Lab. But if you want to get rolling with a starterkit of your own, or use the [demo starterkit](https://github.com/pattern-lab/starterkit-mustache-demo) like the one on [demo.patternlab.io](http://demo.patternlab.io), you can do so automatically at time of `yarn install` by adding your starterkit to the `package.json` file.
