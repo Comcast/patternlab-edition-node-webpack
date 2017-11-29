@@ -9,7 +9,7 @@ The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-la
 ## Installation and Starting
 
 1. `yarn install` or `npm install`
-2. `yarn start` or `npm run start`
+2. `yarn start` or `npm run patternlab:serve`
 
 
 ## Packaged Components
