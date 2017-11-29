@@ -47,30 +47,9 @@ function installplugin(plugin) {
   patternlab.installplugin(plugin);
 }
 
-var options = {}, // Key Value
-    params = [], // Unamed Values
-    arg = process.argv;
-
+var arg = process.argv;
 arg.shift();
 arg.shift();
-
-arg.forEach(function(element) {
-  var split;
-
-  if(element.includes(":")) {
-    split = element.split(":");
-  }
-  if(element.includes("=")) {
-    split = element.split("=");
-  }
-  if(split) {
-    options[split[0].replace(/^-+/,"")] = split[1];
-  } else {
-    params.push(element);
-  }
-
-}, this);
-
 
 for (var i=0; i < process.argv.length; i++) {
   
@@ -91,10 +70,10 @@ for (var i=0; i < process.argv.length; i++) {
       liststarterkits();
       break;
     case 'loadstarterkit':
-      loadstarterkit(options.kit, options.clean);
+      loadstarterkit(process.env.npm_config_kit, process.env.npm_config_clean);
       break;
     case 'installplugin':
-      installplugin(options.plugin);
+      installplugin(process.env.npm_config_plugin);
       break;
   }
 }
