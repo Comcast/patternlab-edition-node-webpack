@@ -8,8 +8,8 @@ The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-la
 
 ## Installation and Starting
 
-1. `yarn install` or `npm install`
-2. `yarn start` or `npm run patternlab:serve`
+1. `npm install`
+2. `npm run patternlab:serve`
 
 
 ## Packaged Components
@@ -23,14 +23,11 @@ The webpack edition comes with the following components:
 
 ## Prerequisites
 
-The Pattern Lab Node - webpack edition uses [Node](https://nodejs.org/en/) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [webpack.io](https://webpack.github.io/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm. Also includes [yarn package manager](https://yarnpkg.com/en/docs/install) which makes things a bit easier to manage.
+The Pattern Lab Node - webpack edition uses [Node](https://nodejs.org/en/) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [webpack.io](https://webpack.github.io/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm.
 
 ## Installing
 
-There's two options for installing this version: 
-
-1. `yarn install` (Preferred)
-2. `npm install`
+`npm install`
 
 ### What's Included
 
@@ -38,7 +35,7 @@ There's two options for installing this version:
 
 **Please note:** Pattern Lab Node uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade the webpack edition or to install plug-ins you'll need to be familiar with npm.
 
-### Use npm (yarn)
+### Use npm
 
 `npm` is a dependency management and package system which can pull in all of the webpack editions's dependencies for you. To accomplish this:
 
@@ -48,16 +45,16 @@ There's two options for installing this version:
 
     ```
     cd install/location
-    yarn install
+    npm install
     ```
 
-Running `yarn install` or `npm install` from a directory containing a `package.json` file will download all dependencies defined within. The `yarn.lock` file is automatically managaged everytime you add/remove/upgrade a dependency. Currently `yarn` is faster than `npm` so it's the preferred method of running scripts. 
+Running `npm install` from a directory containing a `package.json` file will download all dependencies defined within. The `package-lock.json` file is automatically managaged everytime you add/remove/upgrade a dependency. 
 
 #### Install the Webpack Edition of Pattern Lab Node as a Dependency
 
 Most people want to run Pattern Lab Node standalone and not as a dependency. If you wish to install as a dependency you can do the following:
 
-Use npm's/yarn `install`/`add` command with an argument to install the Webpack Edition into a location of your choosing. In Terminal type:
+Use npm's `install` command with an argument to install the Webpack Edition into a location of your choosing. In Terminal type:
 
     cd install/location/
     npm install edition-node-webpack
@@ -66,7 +63,7 @@ This will install the Webpack Edition into a directory called `node_modules` in 
 
 ## Getting Started
 
-The Pattern Lab Node - Webpack Edition ships with a [base experience](https://github.com/pattern-lab/starterkit-mustache-base) which serves as clean place to start from scratch with Pattern Lab. But if you want to get rolling with a starterkit of your own, or use the [demo starterkit](https://github.com/pattern-lab/starterkit-mustache-demo) like the one on [demo.patternlab.io](http://demo.patternlab.io), you can do so automatically at time of `yarn install` by adding your starterkit to the `package.json` file.
+The Pattern Lab Node - Webpack Edition ships with a [base experience](https://github.com/pattern-lab/starterkit-mustache-base) which serves as clean place to start from scratch with Pattern Lab. But if you want to get rolling with a starterkit of your own, or use the [demo starterkit](https://github.com/pattern-lab/starterkit-mustache-demo) like the one on [demo.patternlab.io](http://demo.patternlab.io), you can do so automatically at time of `npm install` by adding your starterkit to the `package.json` file.
 
 You can also [work with starterkits using the command line](https://github.com/pattern-lab/patternlab-node/wiki/Importing-Starterkits).
 
@@ -78,19 +75,19 @@ To update Pattern Lab please refer to each component's GitHub repository, and th
 
 To list all available commands type:
 
-    yarn patternlab:help
+    npm run patternlab:help
 
 ### Generate Pattern Lab
 
 To generate the front-end for Pattern Lab type:
 
-    yarn patternlab:build
+    npm run patternlab:build
 
 ### Watch for changes and re-generate Pattern Lab
 
 To watch for changes, re-generate the front-end, and server it via a BrowserSync server,  type:
 
-    yarn patternlab:serve
+    npm run patternlab:serve
 
 Webpack dev server should open [http://localhost:3000](http://localhost:3000) in your browser, both host and port are configurable in the `patternlab-config.json` file.
 
@@ -98,9 +95,9 @@ Webpack dev server should open [http://localhost:3000](http://localhost:3000) in
 
 To install a specific StarterKit from GitHub type:
 
-    yarn add [starterkit-vendor/starterkit-name]
+    npm run add [starterkit-vendor/starterkit-name]
 
-    yarn patternlab:loadstarterkit --kit=[starterkit-name]
+    npm run patternlab:loadstarterkit --kit=[starterkit-name]
 
 ### Pattern Lab - Configuration
 
@@ -140,8 +137,9 @@ By default merge does a `append` if that option works for you only set which web
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server/blob/master/LICENSE) - MIT
 * [webpack-merge](https://github.com/survivejs/webpack-merge/blob/master/LICENSE) - MIT
 
-### Special Thanks and Contributions
+### Contributions
 
-Contributor | Special Thanks  
+Contributor | Message / How to Reach  
 ----------- | --------------
+ ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)[@paintedbicycle](https://github.com/paintedbicycle) | **Paul Wright** - [https://paintedbicycle.com](https://paintedbicycle.com)
  ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75)[@rgualberto](https://github.com/rgualberto) | "A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work, dedication, and support from the start of project."
