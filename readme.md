@@ -95,7 +95,7 @@ Webpack dev server should open [http://localhost:3000](http://localhost:3000) in
 
 To install a specific StarterKit from GitHub type:
 
-    npm run add [starterkit-vendor/starterkit-name]
+    npm install [starterkit-name]
 
     npm run patternlab:loadstarterkit --kit=[starterkit-name]
 
