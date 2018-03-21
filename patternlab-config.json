@@ -39,8 +39,6 @@
   "defaultShowPatternInfo": false,
   "cleanPublic" : true,
   "patternExtension": "mustache",
-  "ignored-extensions" : ["scss", "DS_Store", "less"],
-  "ignored-directories" : ["scss"],
   "debug": false,
   "ishControlsHide": {
     "s": false,
