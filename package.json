@@ -1,7 +1,7 @@
 {
   "name": "edition-node-webpack",
   "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -24,7 +24,7 @@
     "Paul Wright <paul@paintedbicycle.com>" 
   ],
   "scripts": {
-    "start": "yarn patternlab:serve",
+    "start": "npm run patternlab:serve",
     "webpack:version": "webpack --v",
     "patternlab:build": "webpack --env.prod -p",
     "patternlab:serve": "webpack-dev-server --env.dev --hot --progress --colors",
