@@ -6,10 +6,21 @@ The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-la
 
 
 
-## Installation and Starting
+## Quickstart Guide
+*If you do not have nodejs installed, please check the **Prerequisites** section*
 
-1. `npm install`
-2. `npm run patternlab:serve`
+
+1. Download or clone this repository  
+Example: `git clone git@github.com:Comcast/patternlab-edition-node-webpack.git`
+2. In a terminal window, navigate to the downloaded directory  
+Example: `cd path/to/patternlab-edition-node-webpack`
+3. To populate Patternlab with sample data, install a starter kit  
+Run `npm install starterkit-mustache-demo`  
+There are other [starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) available  
+4. Generate sample files  
+Run: `npm run patternlab:loadstarterkit --kit=starterkit-mustache-demo`
+5. Show Patternlab in a Webbrowser  
+Run: `npm run patternlab:serve`
 
 
 ## Packaged Components
