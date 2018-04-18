@@ -4,25 +4,6 @@
 # Pattern Lab Node - Webpack Edition
 The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-lab/patternlab-node) providing tasks to interact with the core library and move supporting frontend assets.
 
-
-
-## Quickstart Guide
-*If you do not have nodejs installed, please check the **Prerequisites** section*
-
-
-1. Download or clone this repository  
-Example: `git clone git@github.com:Comcast/patternlab-edition-node-webpack.git`
-2. In a terminal window, navigate to the downloaded directory  
-Example: `cd path/to/patternlab-edition-node-webpack`
-3. To populate Patternlab with sample data, install a starter kit  
-Run `npm install starterkit-mustache-demo`  
-There are other [starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) available  
-4. Generate sample files  
-Run: `npm run patternlab:loadstarterkit --kit=starterkit-mustache-demo`
-5. Show Patternlab in a Webbrowser  
-Run: `npm run patternlab:serve`
-
-
 ## Packaged Components
 
 The webpack edition comes with the following components:
@@ -35,6 +16,20 @@ The webpack edition comes with the following components:
 ## Prerequisites
 
 The Pattern Lab Node - webpack edition uses [Node](https://nodejs.org/en/) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [webpack.io](https://webpack.github.io/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm.
+
+## Quickstart Guide
+_Note: You must have all of the prerequisites first_
+
+1. Download the `.zip` or fork this repository, then clone it locally.
+    > `git clone git@github.com:YOURGROUP/patternlab-edition-node-webpack.git`
+1. In a terminal window, navigate to the downloaded directory  
+    > `cd path/to/patternlab-edition-node-webpack`
+1. To populate Patternlab with sample data, install a starter kit, there are many [starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) choose from  
+    > `npm install starterkit-mustache-demo`
+1. Generate sample files  
+    > `npm run patternlab:loadstarterkit --kit=starterkit-mustache-demo`
+1. Show Patternlab in a Webbrowser  
+    > `npm run patternlab:serve`
 
 ## Installing
 
@@ -136,7 +131,7 @@ By default merge does a `append` if that option works for you only set which web
 ### Licenses
 * [babel-core](https://github.com/babel/babel/blob/master/LICENSE) - MIT
 * [babel-loader](https://github.com/babel/babel-loader/blob/master/LICENSE) -MIT,
-* [babel-preset-es2015](https://github.com/babel/babel/blob/master/LICENSE) - MIT
+* [babel-preset-env](https://github.com/babel/babel/blob/master/LICENSE) - MIT
 * [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin/blob/master/LICENSE) - MIT
 * [event-hooks-webpack-plugin](https://github.com/cascornelissen/event-hooks-webpack-plugin/blob/master/LICENSE.md) - MIT
 * [globby](https://github.com/sindresorhus/globby/blob/master/license) - MIT
@@ -148,9 +143,10 @@ By default merge does a `append` if that option works for you only set which web
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server/blob/master/LICENSE) - MIT
 * [webpack-merge](https://github.com/survivejs/webpack-merge/blob/master/LICENSE) - MIT
 
-### Contributions
+### Contributors
 
-Contributor | Message / How to Reach  
------------ | --------------
- ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)[@paintedbicycle](https://github.com/paintedbicycle) | **Paul Wright** - [https://paintedbicycle.com](https://paintedbicycle.com)
- ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75)[@rgualberto](https://github.com/rgualberto) | "A huge thank you to a incredible developer [Rodrigo Gualberto](https://github.com/rgualberto) for all of his hard work, dedication, and support from the start of project."
+| | | |
+----------- | :-------------- | :-- |
+| ![@Josh68](https://avatars2.githubusercontent.com/u/771447?s=460&v=4)| **Josh Schneider** | [GitHub](https://github.com/Josh68) 
+| ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)| **Paul Wright** | [Website](https://paintedbicycle.com) 
+| ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75) | **Rodrigo Gualberto** | [GitHub](https://github.com/rgualberto)

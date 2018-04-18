@@ -1,7 +1,7 @@
 {
   "name": "edition-node-webpack",
   "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
-  "version": "1.0.7",
+  "version": "1.0.6",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -20,6 +20,7 @@
   "bugs": "https://github.com/Comcast/patternlab-edition-node-webpack/issues",
   "author": "Matt Bulfair <Matt_Bulfair@comcast.com>",
   "contributors": [
+    "Josh Schneider <josh68@gmail.com>",
     "Rodrigo Gualberto <itzdrigz@gmail.com>",
     "Paul Wright <paul@paintedbicycle.com>"
   ],
