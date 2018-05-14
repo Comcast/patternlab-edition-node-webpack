@@ -16,7 +16,7 @@ module.exports = env => {
   
   const config = merge.smartStrategy(plConfig.webpackMerge)({
     devtool: ifDev('source-map'),
-    context: resolve(__dirname, 'source'),
+    context: resolve(__dirname, plConfig.paths.source.root),
     node: {
       fs: "empty"
     },
@@ -29,7 +29,7 @@ module.exports = env => {
         })
     },
     output: {
-      path: resolve(__dirname, 'public'),
+      path: resolve(__dirname, plConfig.paths.public.root),
       filename: '[name].js'
     },
     plugins:  removeEmpty([
@@ -136,7 +136,7 @@ module.exports = env => {
       }),
     ]),
     devServer: {
-      contentBase: resolve(__dirname, 'public'),
+      contentBase: resolve(__dirname, plConfig.paths.public.root),
       port: plConfig.server.port,
       open:true,
       watchContentBase: false
