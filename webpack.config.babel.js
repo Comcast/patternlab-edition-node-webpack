@@ -136,7 +136,7 @@ module.exports = env => {
       }),
     ]),
     devServer: {
-      contentBase: resolve(__dirname, 'public'),
+      contentBase: resolve(__dirname, plConfig.paths.public.root),
       port: plConfig.server.port,
       open:true,
       watchContentBase: false
