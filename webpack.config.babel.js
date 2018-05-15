@@ -95,13 +95,7 @@ module.exports = env => {
         }
       ]),
       new EventHooksPlugin({
-        // Before WebPack compiles, call the pattern build API, once done, bundle continues
-        'before-compile': function(compilationParams, callback){
-          patternlab.build(callback, plConfig.cleanPublic);
-        }
-      }),
-      new EventHooksPlugin({
-        'after-compile': function(compilation, callback) {  
+        'after-emit': function(compilation, callback) {  
           // watch supported templates
           const supportedTemplateExtensions = patternEngines.getSupportedFileExtensions();
           const templateFilePaths = supportedTemplateExtensions.map(function (dotExtension) {
@@ -130,8 +124,8 @@ module.exports = env => {
             compilation.fileDependencies = compilation.fileDependencies.concat(patternFiles);
           });
 
-          // signal done and continue with build
-          callback();
+          // continue with build and trigger callback when done
+          patternlab.build(callback, plConfig.cleanPublic);
         }
       }),
     ]),
