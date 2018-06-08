@@ -59,4 +59,5 @@ typings/
 
 #compiled assets
 public
+events.json
 

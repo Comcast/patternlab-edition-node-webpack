@@ -2,7 +2,7 @@
   "paths": {
     "source": {
       "root": "./source/",
-      "app": "./source/_app",
+      "app": "./source/_app/",
       "patterns": "./source/_patterns/",
       "data": "./source/_data/",
       "meta": "./source/_meta/",
@@ -30,14 +30,23 @@
     "url": "http://localhost",
     "port": 3000
   },
-  "webpackMerge": {
-    "entry":"replace"
+  "app": {
+    "uglify": {
+      "sourceMap": false,
+      "parallel": true,
+      "uglifyOptions": {
+        "mangle": false
+      }
+    },
+    "namespace": ""
   },
-  "styleGuideExcludes": [
-  ],
+  "webpackMerge": {
+    "entry": "replace"
+  },
+  "styleGuideExcludes": [],
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
-  "cleanPublic" : true,
+  "cleanPublic": true,
   "patternExtension": "mustache",
   "debug": false,
   "ishControlsHide": {
@@ -63,8 +72,7 @@
     "l": [800, 2600]
   },
   "patternStateCascade": ["inprogress", "inreview", "complete"],
-  "patternStates": {
-  },
+  "patternStates": {},
   "patternExportPatternPartials": [],
   "patternExportDirectory": "./pattern_exports/",
   "cacheBust": true,
