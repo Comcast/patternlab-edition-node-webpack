@@ -15,7 +15,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = env => {
   const { ifProduction, ifDevelopment } = getIfUtils(env);
 
-  const config = merge.smartStrategy(plConfig.webpackMerge)(
+  const config = merge.smartStrategy(plConfig.app.webpackMerge)(
     {
       devtool: ifDevelopment("source-map"),
       context: resolve(__dirname, plConfig.paths.source.root),
@@ -57,7 +57,6 @@ module.exports = env => {
           new webpack.HotModuleReplacementPlugin(),
           new webpack.NamedModulesPlugin()
         ),
-
         // Remove with PL Core 3.x
         new CopyWebpackPlugin([
           {
@@ -116,7 +115,6 @@ module.exports = env => {
                 `${plConfig.paths.source.data}**/*.json`,
                 `${plConfig.paths.source.fonts}**/*`,
                 `${plConfig.paths.source.images}**/*`,
-                `${plConfig.paths.source.js}**/*`,
                 `${plConfig.paths.source.meta}**/*`,
                 `${plConfig.paths.source.annotations}**/*`
               ];
@@ -154,11 +152,13 @@ module.exports = env => {
       ]),
       devServer: {
         contentBase: resolve(__dirname, plConfig.paths.public.root),
-        port: plConfig.server.port,
+        publicPath: `${plConfig.app.webpackDevServer.url}:${plConfig.app.webpackDevServer.port}`,
+        port: plConfig.app.webpackDevServer.port,
         open: true,
         hot: true,
-        watchContentBase: false
-      },
+        watchContentBase: plConfig.app.webpackDevServer.watchContentBase,
+        watchOptions: plConfig.app.webpackDevServer.watchOptions
+    },
       module: {
         rules: [
           {

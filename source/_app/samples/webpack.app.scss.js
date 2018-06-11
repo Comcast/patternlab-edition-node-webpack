@@ -30,9 +30,7 @@ module.exports = env => {
                 {
                     gitignore: true
                 }
-            ).map(function (filePath) {
-                return filePath;
-            })
+            )
         },
         optimization: {
             splitChunks: {
@@ -54,8 +52,7 @@ module.exports = env => {
             }),
             new webpack.DefinePlugin({
                 NAMESPACE: appNamespace
-            }),
-            new webpack.debug.ProfilingPlugin()
+            })
         ],
         module: {
             rules: [
