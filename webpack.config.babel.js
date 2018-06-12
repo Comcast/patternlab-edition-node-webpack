@@ -127,11 +127,9 @@ module.exports = env => {
                   .map(function(filePath) {
                     return resolve(__dirname, filePath);
                   });
-
                 patternFiles.forEach(item => {
                   compilation.fileDependencies.add(item);
                 });
-                const iterator1 = compilation.fileDependencies.entries();
               });
             }
           })
