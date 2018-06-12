@@ -1,34 +1,35 @@
 [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/LICENSE)
 
-
 # Pattern Lab Node - Webpack Edition
+
 The webpack wrapper around [Pattern Lab Node Core](https://github.com/pattern-lab/patternlab-node) providing tasks to interact with the core library and move supporting frontend assets.
 
 ## Packaged Components
 
 The webpack edition comes with the following components:
 
-* `patternlab-node`: [GitHub](https://github.com/pattern-lab/patternlab-node), [npm](https://www.npmjs.com/package/patternlab-node)
-* `patternengine-node-mustache`: [GitHub](https://github.com/pattern-lab/patternengine-node-mustache), [npm](https://www.npmjs.com/package/patternengine-node-mustache)
-* `pattern-lab/styleguidekit-assets-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-assets-default)
-* `pattern-lab/styleguidekit-mustache-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-mustache-default)
+-   `patternlab-node`: [GitHub](https://github.com/pattern-lab/patternlab-node), [npm](https://www.npmjs.com/package/patternlab-node)
+-   `patternengine-node-mustache`: [GitHub](https://github.com/pattern-lab/patternengine-node-mustache), [npm](https://www.npmjs.com/package/patternengine-node-mustache)
+-   `pattern-lab/styleguidekit-assets-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-assets-default)
+-   `pattern-lab/styleguidekit-mustache-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-mustache-default)
 
 ## Prerequisites
 
 The Pattern Lab Node - webpack edition uses [Node](https://nodejs.org/en/) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [webpack.io](https://webpack.github.io/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm.
 
 ## Quickstart Guide
+
 _Note: You must have all of the prerequisites first_
 
-1. Download the `.zip` or fork this repository, then clone it locally.
+1.  Download the `.zip` or fork this repository, then clone it locally.
     > `git clone git@github.com:YOURGROUP/patternlab-edition-node-webpack.git`
-1. In a terminal window, navigate to the downloaded directory  
+1.  In a terminal window, navigate to the downloaded directory
     > `cd path/to/patternlab-edition-node-webpack`
-1. To populate Patternlab with sample data, install a starter kit, there are many [starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) choose from  
+1.  To populate Patternlab with sample data, install a starter kit, there are many [starterkits](https://github.com/pattern-lab?utf8=%E2%9C%93&q=starterkit&type=&language=) choose from
     > `npm install starterkit-mustache-demo`
-1. Generate sample files  
+1.  Generate sample files
     > `npm run patternlab:loadstarterkit --kit=starterkit-mustache-demo`
-1. Show Patternlab in a Webbrowser  
+1.  Show Patternlab in a Webbrowser
     > `npm run patternlab:serve`
 
 ## Installing
@@ -37,7 +38,7 @@ _Note: You must have all of the prerequisites first_
 
 ### What's Included
 
- The pre-built project comes with the [Base Starterkit for Mustache](https://github.com/pattern-lab/starterkit-mustache-base) installed by default.
+The pre-built project comes with the [Base Starterkit for Mustache](https://github.com/pattern-lab/starterkit-mustache-base) installed by default.
 
 **Please note:** Pattern Lab Node uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade the webpack edition or to install plug-ins you'll need to be familiar with npm.
 
@@ -45,16 +46,16 @@ _Note: You must have all of the prerequisites first_
 
 `npm` is a dependency management and package system which can pull in all of the webpack editions's dependencies for you. To accomplish this:
 
-* download or `git clone` this repository to an install location.
+-   download or `git clone` this repository to an install location.
 
-* run the following
+-   run the following
 
     ```
     cd install/location
     npm install
     ```
 
-Running `npm install` from a directory containing a `package.json` file will download all dependencies defined within. The `package-lock.json` file is automatically managaged everytime you add/remove/upgrade a dependency. 
+Running `npm install` from a directory containing a `package.json` file will download all dependencies defined within. The `package-lock.json` file is automatically managaged everytime you add/remove/upgrade a dependency.
 
 #### Install the Webpack Edition of Pattern Lab Node as a Dependency
 
@@ -91,7 +92,7 @@ To generate the front-end for Pattern Lab type:
 
 ### Watch for changes and re-generate Pattern Lab
 
-To watch for changes, re-generate the front-end, and server it via a BrowserSync server,  type:
+To watch for changes, re-generate the front-end, and server it via a BrowserSync server, type:
 
     npm run patternlab:serve
 
@@ -109,35 +110,51 @@ To install a specific StarterKit from GitHub type:
 
 Unlike the other editions, there were a few options added just for this edition that allow for easier upgrading, and better flexibility.
 
-#### Setting Dev Server Settings
-You can set the url and port number in the configuration for 
+#### Setting Webpack Dev Server
 
-    "server": {
+You can set several options to configure your dev server. You can also in the CLI pass any option on demand.
+
+```javascript
+    "webpackDevServer": {
         "url": "http://localhost",
-        "port": 3000
+        "port": 3000,
+        "watchContentBase": true,
+        "watchOptions": {
+            "aggregateTimeout": 500,
+            "ignored": [],
+            "info-verbosity": "verbose"
+        }
     },
+```
 
 #### Setting the Webpack Merge Options
+
 In this edition, it's important to make the configuration for webpack something very easy to update, and very easy to modify. The current setting for webpack merge are described [here.](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/source/_app/readme.md)
 
 You can change how it merges by changing this object in `patternlab-config.json`:
-    
+
+```javascript
     "webpackMerge": {
-        "entry":"replace"
+        "entry": "replace"
     },
+```
 
 By default merge does a `append` if that option works for you only set which webpack configuration you want to change. The merge setting is: `smartStrategy` which is documented over on this [page.](https://www.npmjs.com/package/webpack-merge#mergesmartstrategy-key-prependappendreplaceconfiguration--configuration)
 
 ### Licenses
+* [babel-cli](https://github.com/babel/babel/blob/master/LICENSE) - MIT
 * [babel-core](https://github.com/babel/babel/blob/master/LICENSE) - MIT
-* [babel-loader](https://github.com/babel/babel-loader/blob/master/LICENSE) -MIT,
+* [babel-polyfill](https://github.com/babel/babel-loader/blob/master/LICENSE) -MIT
+* [babel-loader](https://github.com/babel/babel-loader/blob/master/LICENSE) -MIT
 * [babel-preset-env](https://github.com/babel/babel/blob/master/LICENSE) - MIT
+* [babel-register](https://github.com/babel/babel-loader/blob/master/LICENSE) -MIT
 * [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin/blob/master/LICENSE) - MIT
 * [event-hooks-webpack-plugin](https://github.com/cascornelissen/event-hooks-webpack-plugin/blob/master/LICENSE.md) - MIT
 * [globby](https://github.com/sindresorhus/globby/blob/master/license) - MIT
 * [patternlab-node](https://github.com/pattern-lab/patternlab-node/blob/master/LICENSE) - MIT
 * [styleguidekit-assets-default](https://github.com/pattern-lab/styleguidekit-assets-default/blob/master/LICENSE) - MIT
 * [styleguidekit-mustache-default](https://github.com/pattern-lab/styleguidekit-mustache-default/blob/master/LICENSE) - MIT
+* [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/blob/master/LICENSE) - MIT
 * [webpack](https://github.com/webpack/webpack/blob/master/LICENSE) - MIT
 * [webpack-config-utils](https://github.com/kentcdodds/webpack-config-utils/blob/master/LICENSE) - MIT
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server/blob/master/LICENSE) - MIT
@@ -147,6 +164,6 @@ By default merge does a `append` if that option works for you only set which web
 
 | | | |
 ----------- | :-------------- | :-- |
-| ![@Josh68](https://avatars2.githubusercontent.com/u/771447?s=460&v=4)| **Josh Schneider** | [GitHub](https://github.com/Josh68) 
-| ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)| **Paul Wright** | [Website](https://paintedbicycle.com) 
-| ![@rgualberto](https://avatars3.githubusercontent.com/u/5126167?v=4&s=75) | **Rodrigo Gualberto** | [GitHub](https://github.com/rgualberto)
+| ![@Josh68](https://avatars2.githubusercontent.com/u/771447?s=75&v=4)| **Josh Schneider** | [GitHub](https://github.com/Josh68)
+| ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)| **Paul Wright** | [Website](https://paintedbicycle.com)
+````
