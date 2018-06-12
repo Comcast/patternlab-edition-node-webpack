@@ -6,7 +6,11 @@ Used to store your app specific files.
 
 **Custom Webpack Configuration**
 
-`webpack.app.js` this file is used to place your custom webpack configuration. This will merge or override the values in `webpack.config.babel.js` This will provide a way to change your configuration and still get updates in the future.
+The file `/source/_app/webpack.app.js` is your custom webpack configuration. This will merge or override the values in `webpack.config.babel.js`. This will provide a way to change your configuration and still get updates in the future.
+
+**Sample Custom Configuration**
+
+This edition includes [an example configuration](https://github.com/Comcast/patternlab-edition-node-webpack/blob/latest/source/_app/samples/scss/webpack.app.js) for loading, processing, and bundling SASS/SCSS. Use this sample as a template and modify as you like for working with any project asset-types.
 
 ### More information
 

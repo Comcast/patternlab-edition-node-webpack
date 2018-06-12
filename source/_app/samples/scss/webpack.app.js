@@ -1,5 +1,6 @@
 /**
- * NOTE: THIS IS A SAMPLE, THIS SHOULD BE webpack.app.js one level higher to be used in your project.
+ * NOTE: THIS IS A SAMPLE. 
+ * Any configuration to be merged with 'webpack.config.babel.js' SHOULD BE ADDED TO '/source/_app/webpack.app.js'.
  * Add new dependencies like so:
  * "yarn add autoprefixer import-glob-loader css-loader node-sass postcss-loader postcss-flexbugs-fixes mini-css-extract-plugin sass-loader style-loader --dev"
  * or
