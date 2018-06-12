@@ -157,7 +157,7 @@ module.exports = env => {
         hot: true,
         watchContentBase: plConfig.app.webpackDevServer.watchContentBase,
         watchOptions: plConfig.app.webpackDevServer.watchOptions
-    },
+      },
       module: {
         rules: [
           {
