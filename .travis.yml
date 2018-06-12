@@ -1,11 +1,29 @@
 language: node_js
 
 node_js:
-  - node
-  - 6
+  - lts/*
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+    - yarn
+
+script:
+    - yarn webpack:version
+    - yarn patternlab:build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: public
+  on:
+    branch: master
 
 branches:
   only:
     - master
     - latest
-
