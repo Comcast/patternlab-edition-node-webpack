@@ -12,10 +12,10 @@ install:
     - yarn
 
 script:
-    - patternlab:build
+    - yarn webpack:version
+    - yarn patternlab:build
 
 branches:
   only:
     - master
     - latest
-
