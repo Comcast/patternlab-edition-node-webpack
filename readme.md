@@ -138,8 +138,36 @@ You can change how it merges by changing this object in `patternlab-config.json`
         "entry": "replace"
     },
 ```
-
 By default merge does a `append` if that option works for you only set which webpack configuration you want to change. The merge setting is: `smartStrategy` which is documented over on this [page.](https://www.npmjs.com/package/webpack-merge#mergesmartstrategy-key-prependappendreplaceconfiguration--configuration)
+
+#### Modifying the compression settings for bundles
+
+You can safely modify the following settings in the the main `webpack.babel.config` that can change how the bundles get optimized.
+
+_Note: in webpack 4, these settings are automatically triggered when `mode=production` when running the dev server this is not used._
+
+All uglify settings are in the`patternlab-config.json`:
+
+```javascript
+    "uglify": {
+        "sourceMap": false,
+        "parallel": true,
+        "uglifyOptions": {
+            "mangle": false
+        }
+    },
+```
+#### Namespace
+In some cases you may want to add a namespace to your JS or CSS/SCSS files. You can now add a global `NAMESPACE` which can be read by any JS module. The sample of .scss includes how to use it in a `.SCSS` file.
+
+This can be changed in the`patternlab-config.json` under `app`:
+
+```javascript
+    "app": {
+        "namespace": ""
+    }
+```
+
 
 ### Licenses
 * [babel-cli](https://github.com/babel/babel/blob/master/LICENSE) - MIT
