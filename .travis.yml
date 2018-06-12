@@ -2,7 +2,17 @@ language: node_js
 
 node_js:
   - node
-  - 6
+  - 8
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+    - yarn
+
+script:
+    - patternlab:build
 
 branches:
   only:
