@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "timestamp": 1528899504518,
+  "graph": {
+    "options": {
+      "directed": true,
+      "multigraph": false,
+      "compound": false
+    },
+    "nodes": [
+      {
+        "v": "/home/travis/build/Comcast/patternlab-edition-node-webpack/source/_meta/_00-head.mustache",
+        "value": {
+          "compileState": null
+        }
+      },
+      {
+        "v": "/home/travis/build/Comcast/patternlab-edition-node-webpack/source/_meta/_01-foot.mustache",
+        "value": {
+          "compileState": null
+        }
+      }
+    ],
+    "edges": []
+  }
+}
