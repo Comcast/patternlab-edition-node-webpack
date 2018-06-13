@@ -28,7 +28,6 @@
     "Paul Wright <paul@paintedbicycle.com>"
   ],
   "scripts": {
-    "start": "npm run patternlab:serve",
     "webpack:version": "webpack --v",
     "patternlab:build": "webpack --mode=production --env.production",
     "patternlab:serve": "webpack-dev-server --mode=development --env.development",
