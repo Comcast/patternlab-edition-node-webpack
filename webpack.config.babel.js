@@ -110,9 +110,8 @@ module.exports = env => {
 
               // additional watch files
               const watchFiles = [
-                `${plConfig.paths.source.patterns}**/*.json`,
-                `${plConfig.paths.source.patterns}**/*.md`,
-                `${plConfig.paths.source.data}**/*.json`,
+                `${plConfig.paths.source.patterns}**/*.(json|md|yaml|yml)`,
+                `${plConfig.paths.source.data}**/*.(json|md|yaml|yml)`,
                 `${plConfig.paths.source.fonts}**/*`,
                 `${plConfig.paths.source.images}**/*`,
                 `${plConfig.paths.source.meta}**/*`,
@@ -156,7 +155,7 @@ module.exports = env => {
         hot: true,
         watchContentBase: plConfig.app.webpackDevServer.watchContentBase,
         watchOptions: plConfig.app.webpackDevServer.watchOptions
-    },
+      },
       module: {
         rules: [
           {

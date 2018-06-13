@@ -110,6 +110,19 @@ To install a specific StarterKit from GitHub type:
 
 Unlike the other editions, there were a few options added just for this edition that allow for easier upgrading, and better flexibility.
 
+#### Custom Webpack Configuration and Merge Options
+
+In this edition, it's important to make the configuration for webpack something very easy to update, and very easy to modify. The current setting for webpack custom configuration and merge are described [here.](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/source/_app/readme.md)
+
+You can change how it merges by changing this object in `patternlab-config.json`:
+
+```javascript
+    "webpackMerge": {
+        "entry": "replace"
+    },
+```
+By default merge does a `append` if that option works for you only set which webpack configuration you want to change. The merge setting is: `smartStrategy` which is documented over on this [page.](https://www.npmjs.com/package/webpack-merge#mergesmartstrategy-key-prependappendreplaceconfiguration--configuration)
+
 #### Setting Webpack Dev Server
 
 You can set several options to configure your dev server. You can also in the CLI pass any option on demand.
@@ -126,27 +139,13 @@ You can set several options to configure your dev server. You can also in the CL
         }
     },
 ```
-
-#### Setting the Webpack Merge Options
-
-In this edition, it's important to make the configuration for webpack something very easy to update, and very easy to modify. The current setting for webpack merge are described [here.](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/source/_app/readme.md)
-
-You can change how it merges by changing this object in `patternlab-config.json`:
-
-```javascript
-    "webpackMerge": {
-        "entry": "replace"
-    },
-```
-By default merge does a `append` if that option works for you only set which webpack configuration you want to change. The merge setting is: `smartStrategy` which is documented over on this [page.](https://www.npmjs.com/package/webpack-merge#mergesmartstrategy-key-prependappendreplaceconfiguration--configuration)
-
 #### Modifying the compression settings for bundles
 
 You can safely modify the following settings in the the main `webpack.babel.config` that can change how the bundles get optimized.
 
 _Note: in webpack 4, these settings are automatically triggered when `mode=production` when running the dev server this is not used._
 
-All uglify settings are in the`patternlab-config.json`:
+All uglify settings are in the `patternlab-config.json`:
 
 ```javascript
     "uglify": {
@@ -167,8 +166,6 @@ This can be changed in the`patternlab-config.json` under `app`:
         "namespace": ""
     }
 ```
-
-
 ### Licenses
 * [babel-cli](https://github.com/babel/babel/blob/master/LICENSE) - MIT
 * [babel-core](https://github.com/babel/babel/blob/master/LICENSE) - MIT
