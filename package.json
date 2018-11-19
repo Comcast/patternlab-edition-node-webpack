@@ -1,24 +1,26 @@
 {
     "name": "edition-node-webpack",
     "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "dependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.4",
-        "babel-polyfill": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-register": "^6.26.0",
-        "copy-webpack-plugin": "^4.5.1",
-        "event-hooks-webpack-plugin": "^2.0.0",
+        "@babel/cli": "^7.1.5",
+        "@babel/core": "^7.1.6",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.1.6",
+        "@babel/register": "^7.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-loader": "^8.0.4",
+        "copy-webpack-plugin": "^4.6.0",
+        "event-hooks-webpack-plugin": "^2.1.1",
         "globby": "^8.0.1",
         "patternlab-node": "^2.12.0",
         "styleguidekit-assets-default": "^3.5.2",
         "styleguidekit-mustache-default": "^3.1.0",
-        "uglifyjs-webpack-plugin": "^1.2.5",
-        "webpack": "^4.12.0",
-        "webpack-config-utils": "^2.3.0",
-        "webpack-merge": "^4.1.2"
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.26.0",
+        "webpack-config-utils": "^2.3.1",
+        "webpack-merge": "^4.1.4"
     },
     "repository": "git@github.com:Comcast/patternlab-edition-node-webpack.git",
     "bugs": "https://github.com/Comcast/patternlab-edition-node-webpack/issues",
@@ -47,18 +49,19 @@
     "babel": {
         "presets": [
             [
-                "env",
+                "@babel/preset-env",
                 {
-                    "targets": {
-                        "node": "current"
-                    }
+                    "useBuiltIns": "usage"
                 }
             ]
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
         ]
     },
     "devDependencies": {
         "npm-run-all": "^4.1.3",
-        "webpack-cli": "^3.0.3",
-        "webpack-dev-server": "^3.1.4"
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.10"
     }
 }
