@@ -10,9 +10,13 @@
         "babel-preset-env": "^1.7.0",
         "babel-register": "^6.26.0",
         "copy-webpack-plugin": "^4.5.1",
+        "css-loader": "^2.0.0",
         "event-hooks-webpack-plugin": "^2.0.0",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "file-loader": "^2.0.0",
         "globby": "^8.0.1",
         "patternlab-node": "^2.12.0",
+        "style-loader": "^0.23.1",
         "styleguidekit-assets-default": "^3.5.2",
         "styleguidekit-mustache-default": "^3.1.0",
         "uglifyjs-webpack-plugin": "^1.2.5",
@@ -25,7 +29,8 @@
     "author": "Matt Bulfair <Matt_Bulfair@comcast.com>",
     "contributors": [
         "Josh Schneider <josh68@gmail.com>",
-        "Paul Wright <paul@paintedbicycle.com>"
+        "Paul Wright <paul@paintedbicycle.com>",
+        "René Stalder <rey@nothing.ch>"
     ],
     "scripts": {
         "start": "run-p patternlab:serve",
