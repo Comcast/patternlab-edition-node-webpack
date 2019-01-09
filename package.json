@@ -3,11 +3,11 @@
     "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
     "version": "2.0.1",
     "dependencies": {
-        "@babel/cli": "^7.1.5",
-        "@babel/core": "^7.1.6",
-        "@babel/plugin-proposal-class-properties": "^7.1.0",
-        "@babel/polyfill": "^7.0.0",
-        "@babel/preset-env": "^7.1.6",
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.2.3",
+        "@babel/polyfill": "^7.2.5",
+        "@babel/preset-env": "^7.2.3",
         "@babel/register": "^7.0.0",
         "babel-core": "^7.0.0-bridge.0",
         "babel-loader": "^8.0.5",
@@ -17,10 +17,10 @@
         "patternlab-node": "^2.12.0",
         "styleguidekit-assets-default": "^3.5.2",
         "styleguidekit-mustache-default": "^3.1.0",
-        "uglifyjs-webpack-plugin": "^2.0.1",
-        "webpack": "^4.26.0",
+        "uglifyjs-webpack-plugin": "^2.1.1",
+        "webpack": "^4.28.1",
         "webpack-config-utils": "^2.3.1",
-        "webpack-merge": "^4.1.4"
+        "webpack-merge": "^4.2.1"
     },
     "repository": "git@github.com:Comcast/patternlab-edition-node-webpack.git",
     "bugs": "https://github.com/Comcast/patternlab-edition-node-webpack/issues",
@@ -62,7 +62,7 @@
     },
     "devDependencies": {
         "npm-run-all": "^4.1.5",
-        "webpack-cli": "^3.1.2",
+        "webpack-cli": "^3.2.1",
         "webpack-dev-server": "^3.1.14"
     }
 }
