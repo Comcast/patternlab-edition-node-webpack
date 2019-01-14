@@ -1,0 +1,9 @@
+@media print {
+    body {
+        background: white;
+    }
+    .btn {
+        background: transparent;
+        color: black;
+    }
+}

@@ -7,11 +7,18 @@ cache:
   directories:
     - "node_modules"
 
+env:
+  - TESTFOLDER=test-samples/sample-project-simple
+#  - TESTFOLDER=test-samples/sample-project-simple
+#  - TESTFOLDER=test-samples/sample-project-simple
+#  - TESTFOLDER=test-samples/sample-project-simple
+
 install:
     - yarn
 
 script:
     - yarn webpack:version
+    - cp -a /$TESTFOLDER/. /source/
     - yarn patternlab:build
 
 deploy:
