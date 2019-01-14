@@ -8,7 +8,7 @@ cache:
     - "node_modules"
 
 env:
-  - TESTFOLDER=test-samples/sample-project-simple
+  - TESTFOLDER=test-examples/sample-project-simple
 #  - TESTFOLDER=test-samples/sample-project-simple
 #  - TESTFOLDER=test-samples/sample-project-simple
 #  - TESTFOLDER=test-samples/sample-project-simple
