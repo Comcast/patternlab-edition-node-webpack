@@ -18,7 +18,7 @@ install:
 
 script:
     - yarn webpack:version
-    - cp -a /$TESTFOLDER/. /source/
+    - cp -a ./$TESTFOLDER/. ./source/
     - yarn patternlab:build
 
 deploy:
