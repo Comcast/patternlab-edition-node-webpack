@@ -201,7 +201,7 @@ module.exports = env => {
                                       plugins: loader => [
                                         // Inline all CSS @import statements
                                         atImport({ root: loader.resourcePath }),
-                                        url({ url: "rebase" }),
+                                        url({ url: "rebase" })
                                       ]
                                     }
                                   },
@@ -210,7 +210,12 @@ module.exports = env => {
                     },
                     {
                         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                        loader: "url-loader?limit=100000"
+                        use: [{
+                            loader: 'file-loader',
+                            options: {
+                                name: '[path][name].[ext]',
+                            },
+                        }]
                     },
                 ]
             }
