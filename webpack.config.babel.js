@@ -13,6 +13,7 @@ const customization = require(`${plConfig.paths.source.app}/webpack.app.js`);
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const atImport = require("postcss-import");
+const url = require("postcss-url");
 
 module.exports = env => {
     const { ifProduction, ifDevelopment } = getIfUtils(env);
@@ -199,7 +200,8 @@ module.exports = env => {
                                     options: {
                                       plugins: loader => [
                                         // Inline all CSS @import statements
-                                        atImport({root: loader.resourcePath}),
+                                        atImport({ root: loader.resourcePath }),
+                                        url({ url: "rebase" }),
                                       ]
                                     }
                                   },
@@ -233,7 +235,7 @@ function toWebpackEntry({ from, files, to }) {
     });
 
     globby.sync(globs).forEach(function(filePath) {
-        let outputPath = filePath.replace(`${path.resolve(__dirname, from)}`, `${to}`);
+        let outputPath = filePath.replace(`${path.resolve(__dirname, from)}/`, `${to}`);
         const extName = path.extname(filePath);
 
         if (extName === '.ts') {
@@ -244,7 +246,7 @@ function toWebpackEntry({ from, files, to }) {
             outputPath = outputPath.replace(path.basename(filePath), `${path.basename(filePath, '.ts')}.js`);
         }
 
-        entries[`${outputPath}`] = filePath;
+        entries[`${path.relative(plConfig.paths.public.root, outputPath)}`] = filePath;
     });
 
     console.log(entries)
