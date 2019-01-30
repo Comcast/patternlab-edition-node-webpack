@@ -2,3 +2,7 @@
 body {
     background: #ccc;
 }
+
+.something-else {
+    background: url('../_patterns/components/buttons/icon.svg') no-repeat left;
+}

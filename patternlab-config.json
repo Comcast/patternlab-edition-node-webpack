@@ -31,10 +31,11 @@
             "meta": "./source/_meta/",
             "annotations": "./source/_annotations/",
             "styleguide": "./node_modules/styleguidekit-assets-default/dist/",
+            "css": "./source/css/",
+            "js": "./source/js/",
             "patternlabFiles":
                 "./node_modules/styleguidekit-mustache-default/views/",
-            "images": "./source/images/",
-            "fonts": "./source/fonts/"
+            "images": "./source/images/"
         },
         "public": {
             "root": "./public/",
@@ -42,6 +43,8 @@
             "data": "./public/styleguide/data/",
             "annotations": "./public/annotations/",
             "styleguide": "./public/styleguide/",
+            "css": "./public/css/",
+            "js": "./public/js/",
             "images": "./public/images/",
             "fonts": "./public/fonts/"
         }

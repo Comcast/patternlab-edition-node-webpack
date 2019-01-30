@@ -20,15 +20,15 @@ module.exports = env => {
 
     const entries = () => {
         const dynamicJSEntries = toWebpackEntry({
-            from: plConfig.paths.source.root,
+            from: plConfig.paths.source.js || plConfig.paths.source.root,
             files: ["**/*.js", "!**/*.test.js", "!_app", "!styleguide"],
-            to: plConfig.paths.public.root
+            to: plConfig.paths.public.js || plConfig.paths.public.root
         });
 
         const dynamicCSSEntries = toWebpackEntry({
-            from: plConfig.paths.source.root,
+            from: plConfig.paths.source.css || plConfig.paths.source.root,
             files: ["**/*.css", "!_app", "!styleguide"],
-            to: plConfig.paths.public.root
+            to: plConfig.paths.public.css || plConfig.paths.public.root
         });
 
         const staticEntries = {
@@ -61,11 +61,11 @@ module.exports = env => {
                 splitChunks: {
                     cacheGroups: {
                         vendor: {
-                        test: /node_modules/,
-                        chunks: "initial",
-                        name: "js/pl-source-vendor.js",
-                        priority: 10,
-                        enforce: true
+                            test: /node_modules/,
+                            chunks: "initial",
+                            name: "js/pl-source-vendor.js",
+                            priority: 10,
+                            enforce: true
                         }
                     }
                 }
@@ -113,11 +113,11 @@ module.exports = env => {
                 ]),
                 ifDevelopment(
                     new EventHooksPlugin({
-                        afterEmit: function(compilation) {
+                        afterEmit: function (compilation) {
                             const supportedTemplateExtensions = patternEngines.getSupportedFileExtensions();
                             const templateFilePaths = supportedTemplateExtensions.map(
-                                function(dotExtension) {
-                                return `${plConfig.paths.source.patterns}**/*${dotExtension}`;
+                                function (dotExtension) {
+                                    return `${plConfig.paths.source.patterns}**/*${dotExtension}`;
                                 }
                             );
 
@@ -133,30 +133,30 @@ module.exports = env => {
 
                             const allWatchFiles = watchFiles.concat(templateFilePaths);
 
-                            allWatchFiles.forEach(function(globPath) {
+                            allWatchFiles.forEach(function (globPath) {
                                 const patternFiles = globby
-                                .sync(globPath)
-                                .map(function(filePath) {
-                                    return path.resolve(__dirname, filePath);
-                                });
+                                    .sync(globPath)
+                                    .map(function (filePath) {
+                                        return path.resolve(__dirname, filePath);
+                                    });
                                 patternFiles.forEach(item => {
-                                compilation.fileDependencies.add(item);
+                                    compilation.fileDependencies.add(item);
                                 });
                             });
                         }
                     })
                 ),
                 new EventHooksPlugin({
-                    done: function(stats) {
+                    done: function (stats) {
                         let cleanPublic = plConfig.cleanPublic;
                         process.argv.forEach((val, index) => {
-                        if (val.includes("cleanPublic")) {
-                            val = val.split("=");
-                            cleanPublic = JSON.parse(val[1]);
-                        }
+                            if (val.includes("cleanPublic")) {
+                                val = val.split("=");
+                                cleanPublic = JSON.parse(val[1]);
+                            }
                         });
 
-                        patternlab.build(() => {}, cleanPublic);
+                        patternlab.build(() => { }, cleanPublic);
                     }
                 })
             ]),
@@ -187,24 +187,11 @@ module.exports = env => {
                         test: /\.css$/,
                         use: ExtractTextPlugin.extract({
                             fallback: "style-loader",
+                            publicPath: '../',
                             use: [
-                                // Make CSS @imports recognizable by Webpack, ensure they are included once
                                 {
-                                    loader: "css-loader",
-                                    options: {
-                                        importLoaders: 1
-                                    }
-                                },
-                                {
-                                    loader: 'postcss-loader',
-                                    options: {
-                                      plugins: loader => [
-                                        // Inline all CSS @import statements
-                                        atImport({ root: loader.resourcePath }),
-                                        url({ url: "rebase" })
-                                      ]
-                                    }
-                                  },
+                                    loader: "css-loader"
+                                }
                             ]
                         })
                     },
@@ -213,10 +200,10 @@ module.exports = env => {
                         use: [{
                             loader: 'file-loader',
                             options: {
-                                name: '[path][name].[ext]',
+                                name: '[path][name].[ext]'
                             },
                         }]
-                    },
+                    }
                 ]
             }
         },
@@ -239,7 +226,7 @@ function toWebpackEntry({ from, files, to }) {
         return file[0] === '!' ? `!${path.resolve(__dirname, nonNegatedPath)}` : path.resolve(__dirname, nonNegatedPath);
     });
 
-    globby.sync(globs).forEach(function(filePath) {
+    globby.sync(globs).forEach(function (filePath) {
         let outputPath = filePath.replace(`${path.resolve(__dirname, from)}/`, `${to}`);
         const extName = path.extname(filePath);
 
@@ -250,11 +237,9 @@ function toWebpackEntry({ from, files, to }) {
             // Only has an effect when TypeScript files with ts-loader are used.
             outputPath = outputPath.replace(path.basename(filePath), `${path.basename(filePath, '.ts')}.js`);
         }
-
+        console.log(outputPath);
         entries[`${path.relative(plConfig.paths.public.root, outputPath)}`] = filePath;
     });
-
-    console.log(entries)
 
     return entries;
 }
