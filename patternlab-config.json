@@ -33,10 +33,8 @@
             "styleguide": "./node_modules/styleguidekit-assets-default/dist/",
             "patternlabFiles":
                 "./node_modules/styleguidekit-mustache-default/views/",
-            "js": "./source/js/",
             "images": "./source/images/",
-            "fonts": "./source/fonts/",
-            "css": "./source/css/"
+            "fonts": "./source/fonts/"
         },
         "public": {
             "root": "./public/",
@@ -44,10 +42,8 @@
             "data": "./public/styleguide/data/",
             "annotations": "./public/annotations/",
             "styleguide": "./public/styleguide/",
-            "js": "./public/js/",
             "images": "./public/images/",
-            "fonts": "./public/fonts/",
-            "css": "./public/css/"
+            "fonts": "./public/fonts/"
         }
     },
     "styleGuideExcludes": [],

@@ -12,32 +12,25 @@ const merge = require("webpack-merge");
 const customization = require(`${plConfig.paths.source.app}/webpack.app.js`);
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const atImport = require("postcss-import");
 
 module.exports = env => {
     const { ifProduction, ifDevelopment } = getIfUtils(env);
 
     const entries = () => {
-        const dynamicJSEntries = toWebpackEntry(
-            path.resolve(__dirname, plConfig.paths.source.js),
-            "**/*.js",
-            "js"
-        );
+        const dynamicJSEntries = toWebpackEntry({
+            from: plConfig.paths.source.root,
+            files: ["**/*.js", "!**/*.test.js", "!_app", "!styleguide"],
+            to: plConfig.paths.public.root
+        });
 
-        const dynamicCSSEntries = toWebpackEntry(
-            path.resolve(__dirname, plConfig.paths.source.css),
-            "**/*.css",
-            "css"
-        );
+        const dynamicCSSEntries = toWebpackEntry({
+            from: plConfig.paths.source.root,
+            files: ["**/*.css", "!_app", "!styleguide"],
+            to: plConfig.paths.public.root
+        });
 
         const staticEntries = {
-            // "js/pl-source": globby
-            //     .sync([
-            //         path.resolve(__dirname, `${plConfig.paths.source.js}**/*.js`),
-            //         "!**/*.test.js"
-            //     ])
-            //     .map(function (filePath) {
-            //         return filePath;
-            //     })
         };
 
         const entries = Object.assign(
@@ -69,7 +62,7 @@ module.exports = env => {
                         vendor: {
                         test: /node_modules/,
                         chunks: "initial",
-                        name: "js/pl-source-vendor",
+                        name: "js/pl-source-vendor.js",
                         priority: 10,
                         enforce: true
                         }
@@ -96,12 +89,12 @@ module.exports = env => {
                         from: "./*.ico",
                         to: path.resolve(plConfig.paths.public.root)
                     },
-                    {
-                        // Copy all web fonts from source to public
-                        context: path.resolve(plConfig.paths.source.fonts),
-                        from: "./*",
-                        to: path.resolve(plConfig.paths.public.fonts)
-                    },
+                    // {
+                    //     // Copy all web fonts from source to public
+                    //     context: path.resolve(plConfig.paths.source.fonts),
+                    //     from: "./*",
+                    //     to: path.resolve(plConfig.paths.public.fonts)
+                    // },
                     {
                         // Styleguide Copy everything but css
                         context: path.resolve(plConfig.paths.source.styleguide),
@@ -200,7 +193,16 @@ module.exports = env => {
                                     options: {
                                         importLoaders: 1
                                     }
-                                }
+                                },
+                                {
+                                    loader: 'postcss-loader',
+                                    options: {
+                                      plugins: loader => [
+                                        // Inline all CSS @import statements
+                                        atImport({root: loader.resourcePath}),
+                                      ]
+                                    }
+                                  },
                             ]
                         })
                     },
@@ -223,20 +225,30 @@ module.exports = env => {
  * @param {string} files Input file name or glob
  * @param {string} dest Output path
  */
-function toWebpackEntry(src, files, dest = "") {
-    return globby.sync([path.resolve(`${src}/${files}`)]).map(function(filePath) {
-        let filename = path.basename(filePath);
+function toWebpackEntry({ from, files, to }) {
+    const entries = {};
+    const globs = files.map(file => {
+        const nonNegatedPath = `${from}/${file.replace('!', '')}`;
+        return file[0] === '!' ? `!${path.resolve(__dirname, nonNegatedPath)}` : path.resolve(__dirname, nonNegatedPath);
+    });
+
+    globby.sync(globs).forEach(function(filePath) {
+        let outputPath = filePath.replace(`${path.resolve(__dirname, from)}`, `${to}`);
         const extName = path.extname(filePath);
 
-        if (extName === ".ts") {
-            filename = path.basename(filePath, ".ts") + ".js";
+        if (extName === '.ts') {
+            // Because we have everything including extensions in our entries,
+            // we have to replace the file ending for typescript files to the JavaScript
+            // extension manually when using TypeScript.
+            // Only has an effect when TypeScript files with ts-loader are used.
+            outputPath = outputPath.replace(path.basename(filePath), `${path.basename(filePath, '.ts')}.js`);
         }
 
-        const outputPath = `${dest}/${filename}`;
+        entries[`${outputPath}`] = filePath;
+    });
 
-        const entry = {};
-        entry[`${outputPath}`] = filePath;
-        return entry;
-    })[0];
+    console.log(entries)
+
+    return entries;
 }
 
