@@ -1,4 +1,6 @@
-[![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/LICENSE)
+[![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg?style=flat-square)](https://github.com/Comcast/patternlab-edition-node-webpack/blob/master/LICENSE)
+![Travis (.org) branch](https://img.shields.io/travis/Comcast/patternlab-edition-node-webpack/master.svg?label=build%3Amaster&style=flat-square)
+![Travis (.org) branch](https://img.shields.io/travis/Comcast/patternlab-edition-node-webpack/latest.svg?label=build%3Alatest&style=flat-square)
 
 # Pattern Lab Node - Webpack Edition
 
