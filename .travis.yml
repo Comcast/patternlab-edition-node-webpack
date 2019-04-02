@@ -7,12 +7,9 @@ cache:
   directories:
     - "node_modules"
 
-install:
-    - yarn
-
 script:
-    - yarn webpack:version
-    - yarn patternlab:build
+    - npm run webpack:version
+    - npm run patternlab:build
 
 deploy:
   provider: pages
