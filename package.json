@@ -3,25 +3,25 @@
     "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
     "version": "2.0.2",
     "dependencies": {
-        "@babel/cli": "^7.5.5",
-        "@babel/core": "^7.5.5",
+        "@babel/cli": "^7.6.0",
+        "@babel/core": "^7.6.0",
         "@babel/plugin-proposal-class-properties": "^7.5.5",
-        "@babel/polyfill": "^7.4.4",
-        "@babel/preset-env": "^7.5.5",
-        "@babel/register": "^7.5.5",
+        "@babel/polyfill": "^7.6.0",
+        "@babel/preset-env": "^7.6.0",
+        "@babel/register": "^7.6.0",
         "babel-core": "^7.0.0-bridge.0",
         "babel-loader": "^8.0.6",
         "copy-webpack-plugin": "^5.0.4",
-        "core-js": "^3.1.4",
+        "core-js": "^3.2.1",
         "event-hooks-webpack-plugin": "^2.1.4",
         "globby": "^9.1.0",
         "patternlab-node": "^2.12.0",
         "styleguidekit-assets-default": "^3.5.2",
         "styleguidekit-mustache-default": "^3.1.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
-        "webpack": "^4.39.1",
+        "webpack": "^4.40.2",
         "webpack-config-utils": "^2.3.1",
-        "webpack-merge": "^4.2.1"
+        "webpack-merge": "^4.2.2"
     },
     "repository": "git@github.com:Comcast/patternlab-edition-node-webpack.git",
     "bugs": "https://github.com/Comcast/patternlab-edition-node-webpack/issues",
@@ -64,7 +64,7 @@
     },
     "devDependencies": {
         "npm-run-all": "^4.1.5",
-        "webpack-cli": "^3.3.6",
-        "webpack-dev-server": "^3.7.2"
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.8.1"
     }
 }
