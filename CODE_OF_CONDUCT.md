@@ -44,3 +44,31 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage], versi
 
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/
+
+Código de conducta del Pacto del contribuyente
+Nuestra promesa
+
+En aras de fomentar un ambiente abierto y acogedor, nosotros, como colaboradores y mantenedores, nos comprometemos a hacer que la participación en nuestro proyecto y nuestra comunidad sea una experiencia libre de acoso para todos, independientemente de su edad, tamaño corporal, discapacidad, origen étnico, identidad y expresión de género, nivel de experiencia, nacionalidad, apariencia personal, raza, religión o identidad y orientación sexual.
+Nuestros estándares
+
+Los ejemplos de comportamiento que contribuyen a crear un ambiente positivo incluyen:
+
+    Usar un lenguaje acogedor e inclusivo
+    Ser respetuoso de los diferentes puntos de vista y experiencias.
+    Aceptando con gracia la crítica constructiva
+    Centrarse en lo que es mejor para la comunidad
+    Mostrar empatía hacia otros miembros de la comunidad.
+
+Los ejemplos de comportamiento inaceptable de los participantes incluyen:
+
+    El uso de lenguaje o imágenes sexualizadas y atención o avances sexuales no deseados
+    Comentarios curiosos, insultantes / despectivos y ataques personales o políticos.
+    Acoso público o privado
+    Publicar información privada de otros, como una dirección física o electrónica, sin permiso explícito
+    Otra conducta que razonablemente podría considerarse inapropiada en un entorno profesional
+
+Nuestras responsabilidades
+
+Los encargados del mantenimiento del proyecto son responsables de aclarar los estándares de comportamiento aceptable y se espera que tomen medidas correctivas apropiadas y justas en respuesta a cualquier caso de comportamiento inaceptable.
+
+Los encargados del mantenimiento del proyecto tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, confirmaciones, códigos, ediciones de wiki, problemas y otras contribuciones que no estén alineadas con este Código de conducta, o de prohibir temporal o permanentemente a cualquier contribuyente por otros comportamientos que consideran inapropiados, amenazantes, ofensivos o dañinos.
