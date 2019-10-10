@@ -9,6 +9,8 @@
         "@babel/polyfill": "^7.4.0",
         "@babel/preset-env": "^7.4.2",
         "@babel/register": "^7.4.0",
+        "@pattern-lab/patternengine-node-mustache": "^2.0.0-alpha.2",
+        "@pattern-lab/patternlab-node": "3.0.0-alpha.8",
         "babel-core": "^7.0.0-bridge.0",
         "babel-loader": "^8.0.5",
         "copy-webpack-plugin": "^5.0.2",
@@ -41,7 +43,6 @@
         "patternlab:liststarterkits": "node patternlab.js liststarterkits",
         "patternlab:loadstarterkit": "node patternlab.js loadstarterkit",
         "patternlab:installplugin": "node patternlab.js installplugin",
-        "postinstall": "node scripts/postinstall.js",
         "diagnosis": "run-s patternlab:version webpack:version patternlab:build patternlab:serve"
     },
     "license": "Apache-2.0",
