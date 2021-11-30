@@ -190,5 +190,5 @@ This can be changed in the`patternlab-config.json` under `app`:
 | | | |
 ----------- | :-------------- | :-- |
 | ![@Josh68](https://avatars2.githubusercontent.com/u/771447?s=75&v=4)| **Josh Schneider** | [GitHub](https://github.com/Josh68)
-| ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)| **Paul Wright** | [Website](https://paintedbicycle.com)
+| ![@paintedbicycle](https://avatars3.githubusercontent.com/u/371114?s=75&v=4)| **Paul W** |
 ````
